@@ -1,3 +1,4 @@
+# Azure Virtual Desktop
 resource "azurerm_resource_group" "RSG" {
   name     = var.RSG_Name
   location = var.location
@@ -23,7 +24,7 @@ resource "azurerm_virtual_desktop_host_pool_registration_info" "RegKey" {
 }
 
 resource "time_offset" "time" {
-  offset_days = 1
+  offset_days = 1   # Regirstration Key valid for 1 day / 24-hours
 }
 resource "azurerm_virtual_desktop_workspace" "workspace" {
   name                = "${var.RSG_Name}-workspace"
